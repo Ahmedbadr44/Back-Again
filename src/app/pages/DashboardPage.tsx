@@ -321,7 +321,10 @@ export function DashboardPage() {
                         </div>
                         <div className="w-px h-12 bg-gray-700"></div>
                         <div>
-                          <div className="text-3xl font-bold text-orange-500">ðŸ”¥ {user.streak + 1}</div>
+                          <div className="flex items-center justify-center gap-2 text-3xl font-bold text-orange-500">
+                            <Flame className="w-6 h-6" />
+                            <span className="tabular-nums">{user.streak + 1}</span>
+                          </div>
                           <div className="text-sm text-gray-400">سلسلة أيام</div>
                         </div>
                       </div>
@@ -456,7 +459,7 @@ export function DashboardPage() {
       {/* Exercise Modal */}
       {selectedExercise && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <Card className="max-w-2xl w-full">
+          <Card className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <CardHeader>
               <CardTitle className="text-2xl">{selectedExercise.nameAr || selectedExercise.name}</CardTitle>
               <CardDescription>{selectedExercise.nameEn}</CardDescription>
